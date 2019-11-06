@@ -30,3 +30,7 @@ variable "private_subnet_cidr_b" {
   description = "CIDR for the private subnet"
   default     = "10.0.3.0/24"
 }
+
+variable "key_path" {
+  description = "EC2 instances SSH Public Key path"
+}
