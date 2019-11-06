@@ -42,3 +42,18 @@ resource "aws_instance" "mi_aguila_driver_process" {
     Name = "${var.aws_region} ${var.environment} Mi Aguila Driver"
   }
 }
+
+resource "aws_instance" "mi_aguila_webapp" {
+  ami                         = data.aws_ami.debian_base_image.image_id
+  instance_type               = "m3.medium"
+  key_name                    = aws_key_pair.mi_aguila_key.id
+  subnet_id                   = aws_subnet.public_subnet_a.id
+  vpc_security_group_ids      = [aws_security_group.mi_aguila_public_security_group.id]
+  associate_public_ip_address = true
+  source_dest_check           = false
+  user_data                   = file("webapp.sh")
+
+  tags = {
+    Name = "${var.aws_region} ${var.environment} Mi Aguila Webapp"
+  }
+}
