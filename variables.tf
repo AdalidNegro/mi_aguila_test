@@ -34,3 +34,9 @@ variable "private_subnet_cidr_b" {
 variable "key_path" {
   description = "EC2 instances SSH Public Key path"
 }
+
+variable "ports_list" {
+  description = "Ports to redirect traffic to instances"
+  type        = list(number)
+  default     = [3001, 3002, 3003]
+}
