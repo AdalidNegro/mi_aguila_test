@@ -40,3 +40,7 @@ variable "ports_list" {
   type        = list(number)
   default     = [3001, 3002, 3003]
 }
+
+variable "domain" {
+  description = "Domain name to process the infra"
+}
