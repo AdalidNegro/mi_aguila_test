@@ -44,3 +44,11 @@ variable "ports_list" {
 variable "domain" {
   description = "Domain name to process the infra"
 }
+
+variable "aws_profile" {
+  description = "AWS profile data"
+}
+
+variable "aws_credentials" {
+  description = "AWS credentials file"
+}

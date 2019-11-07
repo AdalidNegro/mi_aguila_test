@@ -10,9 +10,8 @@ resource "aws_lb" "mi_aguila_load_balancer" {
 }
 
 resource "aws_lb_target_group" "mi_aguila_target_group" {
-  count       = 3
   name        = "${var.aws_region}_${var.environment}_mi_aguila_target_group"
-  port        = var.ports_list[count.index]
+  port        = 3000
   protocol    = "TCP"
   vpc_id      = aws_vpc.mi_aguila.id
   target_type = "ip"
@@ -27,7 +26,7 @@ resource "aws_lb_target_group" "mi_aguila_target_group" {
 
 resource "aws_lb_listener" "mi_aguila_listener" {
   load_balancer_arn = aws_lb.mi_aguila_load_balancer.id
-  port              = var.ports_list[count.index]
+  port              = 3000
   protocol          = "TCP"
 
   default_action {
