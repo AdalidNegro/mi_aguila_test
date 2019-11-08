@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "mi_aguila_assets" {
 }
 
 resource "aws_s3_bucket" "mi_aguila_webapp_logs" {
-  bucket        = "${var.aws_region}-${var.environment}-site-logs"
+  bucket        = "${var.aws_region}-${var.environment}-webapp-logs"
   acl           = "log-delivery-write"
   force_destroy = true
 }
