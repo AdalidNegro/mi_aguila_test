@@ -35,12 +35,6 @@ variable "key_path" {
   description = "EC2 instances SSH Public Key path"
 }
 
-variable "ports_list" {
-  description = "Ports to redirect traffic to instances"
-  type        = list(number)
-  default     = [3001, 3002, 3003]
-}
-
 variable "domain" {
   description = "Domain name to process the infra"
 }
@@ -51,4 +45,16 @@ variable "aws_profile" {
 
 variable "aws_credentials" {
   description = "AWS credentials file"
+}
+
+variable "ec2_list" {
+  description = "ec2 names"
+  type        = list(string)
+  default     = ["admin", "client", "driver"]
+}
+
+variable "ports_list" {
+  description = "Ports to redirect traffic to ec2"
+  type        = list(number)
+  default     = [3001, 3002, 3003]
 }

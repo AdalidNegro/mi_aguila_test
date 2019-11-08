@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "mi_aguila_assets" {
-  bucket        = "${var.aws_region}_${var.environment}_mi_aguila_assets_bucket"
+  bucket        = "${var.aws_region}-${var.environment}-mi-aguila-assets-bucket"
   force_destroy = true
 
   tags = {
@@ -14,7 +14,7 @@ resource "aws_s3_bucket" "mi_aguila_webapp_logs" {
 }
 
 resource "aws_s3_bucket" "mi_aguila_webapp" {
-  bucket        = "${var.aws_region}-${var.environment}-mi_aguila-webapp-bucket"
+  bucket        = "${var.aws_region}-${var.environment}-mi-aguila-webapp-bucket"
   acl           = "public-read"
   force_destroy = true
 

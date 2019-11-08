@@ -4,7 +4,7 @@ resource "aws_subnet" "public_subnet_a" {
   availability_zone = "${var.aws_region}a"
 
   tags = {
-    Name = "${var.environment} Public Subnet A"
+    Name = "${var.environment} Public Subnet Zone A"
   }
 }
 
@@ -14,7 +14,7 @@ resource "aws_subnet" "public_subnet_b" {
   availability_zone = "${var.aws_region}b"
 
   tags = {
-    Name = "${var.environment} Public Subnet B"
+    Name = "${var.environment} Public Subnet Zone B"
   }
 }
 

@@ -1,5 +1,5 @@
 resource "aws_elasticache_cluster" "mi_aguila_cache" {
-  cluster_id           = "${var.aws_region}_${var.environment}_cache"
+  cluster_id           = "${var.aws_region}-${var.environment}-cache"
   engine               = "redis"
   node_type            = "cache.t2.micro"
   num_cache_nodes      = 1

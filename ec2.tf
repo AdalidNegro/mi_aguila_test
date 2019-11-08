@@ -5,7 +5,6 @@ resource "aws_instance" "mi_aguila_admin_process" {
   subnet_id                   = aws_subnet.public_subnet_a.id
   vpc_security_group_ids      = [aws_security_group.mi_aguila_public_security_group.id]
   associate_public_ip_address = true
-  source_dest_check           = false
   user_data                   = file("admin.sh")
 
   tags = {
@@ -20,7 +19,6 @@ resource "aws_instance" "mi_aguila_client_process" {
   subnet_id                   = aws_subnet.public_subnet_a.id
   vpc_security_group_ids      = [aws_security_group.mi_aguila_public_security_group.id]
   associate_public_ip_address = true
-  source_dest_check           = false
   user_data                   = file("client.sh")
 
   tags = {
@@ -35,7 +33,6 @@ resource "aws_instance" "mi_aguila_driver_process" {
   subnet_id                   = aws_subnet.public_subnet_a.id
   vpc_security_group_ids      = [aws_security_group.mi_aguila_public_security_group.id]
   associate_public_ip_address = true
-  source_dest_check           = false
   user_data                   = file("driver.sh")
 
   tags = {
@@ -50,7 +47,6 @@ resource "aws_instance" "mi_aguila_webapp" {
   subnet_id                   = aws_subnet.public_subnet_a.id
   vpc_security_group_ids      = [aws_security_group.mi_aguila_public_security_group.id]
   associate_public_ip_address = true
-  source_dest_check           = false
   user_data                   = file("webapp.sh")
 
   tags = {

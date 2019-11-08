@@ -17,7 +17,7 @@ data "archive_file" "lambda_3_zip" {
 }
 
 resource "aws_lambda_function" "lambda_1" {
-  filename = "1.zip"
+  filename = "lambda_1.zip"
 
   function_name    = "${var.environment}_mi_aguila_lambda_1"
   role             = aws_iam_role.role_lambda_1.arn
@@ -27,7 +27,7 @@ resource "aws_lambda_function" "lambda_1" {
 }
 
 resource "aws_lambda_function" "lambda_2" {
-  filename = "2.zip"
+  filename = "lambda_2.zip"
 
   function_name    = "${var.environment}_mi_aguila_lambda_2"
   role             = aws_iam_role.role_lambda_2.arn
@@ -37,7 +37,7 @@ resource "aws_lambda_function" "lambda_2" {
 }
 
 resource "aws_lambda_function" "lambda_3" {
-  filename = "3.zip"
+  filename = "lambda_3.zip"
 
   function_name    = "${var.environment}_mi_aguila_lambda_3"
   role             = aws_iam_role.role_lambda_3.arn
